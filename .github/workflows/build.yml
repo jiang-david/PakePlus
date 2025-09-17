@@ -209,7 +209,11 @@ jobs:
 
             - name: Install dependencies
               run: pnpm install
-
+              
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: docs/dist
 
     deploy:
         environment:
