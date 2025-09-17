@@ -210,15 +210,6 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: GitPress Config
-              run: node ./scripts/gitpress.cjs gitBase
-
-            - name: Build with VitePress
-              run: pnpm run docs:build
-
-            - name: Copy Static
-              run: node ./scripts/gitpress.cjs copyStatic
-
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
